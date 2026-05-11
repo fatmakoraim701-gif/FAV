@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ألبوم ذكريات فطوم 💜</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        /* 1. تنسيق الألوان والشكل العام */
+        body, html {
+            margin: 0;
+            padding: 0;
+            background-color: #000; /* خلفية سوداء */
+            color: #E0B0FF; /* لون بنفسجي فاتح */
+            font-family: 'Arial', sans-serif;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        /* 2. شاشة القلب الافتتاحية */
+        .intro-screen {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: radial-gradient(circle, #1a0033 0%, #000 100%);
+        }
+
+        .heart {
+            font-size: 100px;
+            color: #E0B0FF;
+            cursor: pointer;
+            animation: pulse 1.2s infinite;
+            transition: 0.3s;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); filter: drop-shadow(0 0 5px #E0B0FF); }
+            50% { transform: scale(1.2); filter: drop-shadow(0 0 30px #E0B0FF); }
+            100% { transform: scale(1); filter: drop-shadow(0 0 5px #E0B0FF); }
+        }
+
+        .heart:hover {
+            color: #fff;
+        }
+
+        /* 3. قسم الصور والذكريات */
+        .memories-section {
+            padding: 50px 20px;
+            display: none; /* مخفي في البداية */
+            text-align: center;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .memory-card {
+            background: #111;
+            border: 1px solid #332244;
+            border-radius: 15px;
+            padding: 15px;
+            transition: 0.3s;
+        }
+
+        .memory-card:hover {
+            border-color: #E0B0FF;
+            transform: translateY(-10px);
+            background: #1a1122;
+        }
+
+        .memory-card img {
+            width: 100%;
+            border-radius: 10px;
+            filter: grayscale(30%);
+            transition: 0.5s;
+        }
+
+        .memory-card:hover img {
+            filter: grayscale(0%);
+        }
+
+        h1 { font-size: 3rem; margin-top: 0; }
+        p { color: #d8bfd8; }
+
+    </style>
+</head>
+<body>
+
+    <div class="intro-screen" id="intro">
+        <div class="heart" onclick="openMemories()">
+            <i class="fas fa-heart"></i>
+        </div>
+        <p>اضغطي على القلب لفتح عالمك الخاص 💜</p>
+    </div>
+
+    <div class="memories-section" id="mainContent">
+        <h1>أجمل ذكرياتي ✨</h1>
+        <p>كل لحظة هنا ليها حكاية في قلبي..</p>
+
+        <div class="grid-container">
+            <div class="memory-card">
+                <img src="maryom.JPG" alt="ذكرى">
+                <h3>ذكرى جميلة</h3>
+                <p>اول مره في حياتي اضحي بنومي وبراحتي واروح من بلد لتاني بلد بس عشان اشوفك ساعتين بس عمتا كله يهون يست مريومه 
+                    انا بحبك جدا وبحب وجودك في حياتي..</p>
+            </div>
+
+            <div class="memory-card">
+                <img src="ff.JPG" alt="ذكرى">
+                <h3>يوم لا ينسى</h3>
+                <p>اول مره اتقبلنا كان يوم مرهق بس كان تحفه وكنت مبسوطه.</p>
+            </div>
+
+            <div class="memory-card">
+                <img src="mm.JPG" alt="ذكرى">
+                <h3>معنديش اغلي منك س</h3>
+                <p>بحبحككك جدددا.</p>
+            </div>
+        </div>
+
+        <footer style="margin-top: 50px; opacity: 0.6;">
+            صُنع بكل حب بواسطة فاطوم 💜
+        </footer>
+    </div>
+
+    <script>
+        function openMemories() {
+            // إخفاء شاشة القلب وإظهار المحتوى
+            document.getElementById('intro').style.display = 'none';
+            document.getElementById('mainContent').style.display = 'block';
+            
+            // إضافة حركة ناعمة للظهور
+            document.getElementById('mainContent').style.animation = 'fadeIn 2s';
+        }
+    </script>
+
+</body>
+</html>
